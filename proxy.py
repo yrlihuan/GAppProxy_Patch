@@ -404,7 +404,7 @@ class LocalProxyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
             try:
                 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 sock.connect(("www.google.cn", 80))
-                sock.send("%s %s\r\n" % ("GET", "http://huanligproxy.appspot.com/fetch.py?" + params))
+                sock.send("%s %s\r\n" % ("GET", '%s?%s' % (fetch_server, params)))
 
                 received = ""
                 while True:

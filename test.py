@@ -30,7 +30,7 @@ params = "headers=SG9zdDogd3d3Lmdvb2dsZS5jb20NClVzZXItQWdlbnQ6"\
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.connect(("www.google.cn", 80))
-sock.send("%s %s\r\n" % ("GET", "http://huanligproxy.appspot.com/fetch.py?" + params))
+sock.send("%s %s\r\n" % ("GET", "http://[gae_app_name].appspot.com/fetch.py?" + params))
 
 received = ""
 while True:
